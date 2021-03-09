@@ -1,0 +1,23 @@
+{
+  "name": "lingui",
+  "version": "0.1",
+  "description": "Translation.io client for Lingui",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/translation/lingui.git"
+  },
+  "author": {
+    "name": "Michaël Hoste",
+    "email": "michael@translation.io",
+    "url": "https://translation.io"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@lingui/cli": "3.x"
+  },
+  "dependencies": {
+    "@lingui/macro": "3.x",
+    "@lingui/react": "3.x"
+  }
+}
