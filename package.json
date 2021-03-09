@@ -16,6 +16,6 @@
   "dependencies": {
     "@lingui/macro": "3.x",
     "@lingui/react": "3.x",
-    "@lingui/cli": "3.x",
+    "@lingui/cli": "3.x"
   }
 }
