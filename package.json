@@ -1,5 +1,5 @@
 {
-  "name": "lingui",
+  "name": "@translation/lingui",
   "version": "0.1",
   "description": "Translation.io client for Lingui",
   "main": "index.js",
