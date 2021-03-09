@@ -1,6 +1,6 @@
 {
   "name": "@translation/lingui",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Translation.io client for Lingui",
   "main": "index.js",
   "repository": {
