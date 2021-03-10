@@ -1,6 +1,6 @@
 {
   "name": "@translation/lingui",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Translation.io client for Lingui",
   "main": "index.js",
   "repository": {
@@ -14,8 +14,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@lingui/macro": "3.x",
-    "@lingui/react": "3.x",
-    "@lingui/cli": "3.x"
+    "@lingui/macro": "^3.3",
+    "@lingui/react": "^3.3",
+    "@lingui/cli": "^3.3"
   }
 }
