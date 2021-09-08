@@ -1,10 +1,11 @@
-# [Translation.io](https://translation.io) client for Lingui (React & JavaScript)
+# [Translation.io](https://translation.io) client for React & JavaScript (using [Lingui](https://github.com/lingui/js-lingui))
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 Add this package to localize your **React** or **JavaScript** application.
 
-Use this <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a> or this <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
+Use this <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
+ or this <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
 Write only the source text, and keep it synchronized with your translators on
 [Translation.io](https://translation.io)
@@ -15,7 +16,7 @@ Write only the source text, and keep it synchronized with your translators on
 
 ----------
 
-**Important:**
+**Important Note:**
 
  * The [Translation.io](https://translation.io) client is directly integrated into
 the popular [Lingui](https://github.com/lingui/js-lingui) internationalization
