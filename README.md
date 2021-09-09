@@ -16,7 +16,7 @@ Write only the source text, and keep it synchronized with your translators on
 
 ----------
 
-**Important Note:**
+**Important Information:**
 
  * The [Translation.io](https://translation.io) client is directly integrated into
 the popular [Lingui](https://github.com/lingui/js-lingui) internationalization
@@ -35,8 +35,8 @@ Table of contents
 =================
 
  * [Translation syntaxes](#translation-syntaxes)
-   * [React JSX Syntax](#i18n-yaml)
-   * [JavaScript Syntax](#gettext)
+   * [React JSX Syntax](#react-jsx-syntax)
+   * [JavaScript Syntax](#javascript-syntax)
  * [Installation](#installation)
  * [Usage](#usage)
    * [Sync](#sync)
@@ -65,22 +65,24 @@ Table of contents
 
 ```jsx
 // Regular
-<Trans>Text to be translated</Trans>
+return <Trans>Text to be translated</Trans>
 
 // Variable Interpolation
-<Trans>Hello {name}</Trans>
+return <Trans>Hello {name}</Trans>
 
 // Simple HTML Tags
-<Trans>One sentence with <em>HTML</em> tags</Trans>
+// => Translators see "Text with <0>HTML</0> tags"
+return <Trans>Text with <em>HTML</em> tags</Trans>
 
 // Complex HTML Tags
-<Trans>One sentence with a <a href="https://google.com" target="_blank">link</a></Trans>
+// => Translators see "Text with a <0>link</0>"
+return <Trans>Text with a <a href="https://google.com" target="_blank">link</a></Trans>
 
-// Comment for translators
-<Trans comment="comments for translators">One sentence</Trans>
+// Context (to help translators and get different translations for the same source text)
+// Every id should be unique
+return <Trans id="meeting someone">Date</Trans>
 
-// Context (to allow different translations for the same source text)
-<Trans id="my context">One sentence</Trans>
+return <Trans id="moment in time">Date</Trans>
 ```
 
 #### Plural
@@ -88,36 +90,34 @@ Table of contents
 => see forms and rules here: https://translation.io
 
 ```jsx
-// Pluralization
-<Plural
+// Regular
+return <Plural
   value={count}
   one="You've got 1 message"
   other="You've got # messages"
 />
 
 // Custom plural forms
-<Plural
+return <Plural
   value={count}
   _42="You've got the solution of the universe!"
   one="You've got 1 message"
   other="You've got # messages"
 />
 
-// Complex plural forms with interpolation
-<Plural
+// Variable interpolation
+return <Plural
   value={count}
   one={`Hello ${name}, you've got 1 message`}
   other={`Hello ${name}, you've got # messages`}
 />
 
-// Complex plural forms with HTML tags
-<Plural
+// HTML tags
+return <Plural
   value={count}
   one={<Trans>You've got <strong>1</strong> message</Trans>}
   other={<Trans>You've got <strong>#</strong> messages</Trans>}
 />
-
-// Add plural with id and comments?
 ```
 
 ### JavaScript Syntax
@@ -131,21 +131,39 @@ t`Text to be translated`
 // Variable Interpolation
 t`Hello ${name}`
 
-// Comment for translators
+// Context (to help translators and get different translations for the same source text)
+// Every id should be unique
 t({
-   id: "msg.refresh",
-   message: "One inline sentence with an id"
+   id: "meeting someone",
+   message: "Date"
 })
 
-// Context (to allow different translations for the same source text)
+t({
+   id: "moment in time",
+   message: "Date"
+})
 ```
 
 #### Plural
 
 ```javascript
+// Regular
 plural(count, {
-  one: "one inline plural sentence without id",
-  other: "# inline plural sentences without id"
+  one: "You've got 1 message",
+  other: "You've got # messages"
+})
+
+// Custom plural forms
+plural(count, {
+  _42: "You've got the solution of the universe!",
+  one: "You've got 1 message",
+  other: "You've got # messages"
+})
+
+// Variable interpolation
+plural(count, {
+  one: `Hello ${name}, you've got 1 message`,
+  other: `Hello ${name}, you've got # messages`
 })
 ```
 
