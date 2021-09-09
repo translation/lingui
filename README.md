@@ -19,10 +19,10 @@ Write only the source text, and keep it synchronized with your translators on
 **Important Information:**
 
  * The [Translation.io](https://translation.io) client is directly integrated into
-the popular [Lingui](https://github.com/lingui/js-lingui) internationalization
+the great [Lingui](https://github.com/lingui/js-lingui) internationalization
 framework.
 
- * This repository only provides additional documentation and a dumb
+ * This repository only provides additional documentation and a useful
 meta-package to simplify the [Lingui](https://github.com/lingui/js-lingui)
 installation. You can also refer to the [Lingui documentation](https://lingui.js.org/)
 for more advanced features.
@@ -100,16 +100,6 @@ return <Trans id="moment in time">
 
 #### Plural
 
-English has only 2 plural forms (`one` and `other`) but other languages
-have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
-`other`.
-
-Translators will have the correct list of plural forms proposed directly
-in the interface, with examples in their target language.
-
-You can find the complete list of plural forms and plural rules here:
-https://translation.io/docs/languages_with_plural_cases
-
 ```jsx
 // Regular
 return <Plural
@@ -141,6 +131,16 @@ return <Plural
 />
 ```
 
+**Note:** English has only 2 plural forms (`one` and `other`) but other languages
+have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
+`other`.
+
+Translators will have the correct list of plural forms proposed directly
+in the interface, with examples in their target language.
+
+You can find the complete list of plural forms and plural rules here:
+https://translation.io/docs/languages_with_plural_cases
+
 ### JavaScript Syntax
 
 #### Singular
@@ -152,8 +152,8 @@ t`Text to be translated`
 // Variable Interpolation
 t`Hello ${name}`
 
-// Context (to help translators and get different translations for the same source text)
-// Every id should be unique
+// Context
+// Helps translators differentiate translations for the same source text (IDs should be unique)
 t({
    id: "meeting someone",
    message: "Date"
@@ -166,16 +166,6 @@ t({
 ```
 
 #### Plural
-
-English has only 2 plural forms (`one` and `other`) but other languages
-have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
-`other`.
-
-Translators will have the correct list of plural forms proposed directly
-in the interface, with examples in their target language.
-
-You can find the complete list of plural forms and plural rules here:
-https://translation.io/docs/languages_with_plural_cases
 
 ```javascript
 // Regular
@@ -198,51 +188,59 @@ plural(count, {
 })
 ```
 
+**Note:** English has only 2 plural forms (`one` and `other`) but other languages
+have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
+`other`.
+
+Translators will have the correct list of plural forms proposed directly
+in the interface, with examples in their target language.
+
+You can find the complete list of plural forms and plural rules here:
+https://translation.io/docs/languages_with_plural_cases
+
 ## Installation
 
-### Quick install
+### 1. Install the package
 
- 1. Install the package
+#### Solution 1: Meta-package
 
- 1.1 Quick Install
-
-Use our meta-package to install Lingui easily.
-
-**NPM:**
+Quick way to install Lingui with the correct dependencies.
 
 ```bash
-$ npm install @translation/lingui
+# NPM
+npm install @translation/lingui
+
+# Yarn
+yarn add @translation/lingui
 ```
 
-**Yarn**
-
-```bash
-$ yarn add @translation/lingui
-```
-
- 1.2. Fine-Grained Install
+#### Solution 2: Fine-Grained Install
 
 More complex but cleaner install, with some packages in development only.
 
-**NPM:**
+```bash
+# NPM
+npm install --save-dev @lingui/cli @lingui/macro
+npm install --save-dev @babel/core babel-plugin-macros
+npm install @lingui/react
+```
 
 ```bash
-$ npm install --save-dev @lingui/cli @lingui/macro
-$ npm install --save-dev @babel/core babel-plugin-macros
-$ npm install @lingui/react
-````
+# Yarn
+yarn add --dev @lingui/cli @lingui/macro
+yarn add --dev @babel/core babel-plugin-macros
+yarn add @lingui/react
+```
 
-**Yarn:**
+### 2. Create a new translation project
 
-```bash
-$ yarn add --dev @lingui/cli @lingui/macro
-$ yarn add --dev @babel/core babel-plugin-macros
-$ yarn add @lingui/react
-````
+Create your new project [from the UI](https://translation.io) and select
+the correct source and target languages.
 
+### 3. Configure your project
 
- 2. Create a new translation project [from the UI](https://translation.io).
- 3. Copy the configuration file into your app (`.linguirc`).
+Copy the `.linguirc` configuration file that was generated for you at the
+root of your application.
 
 The configuration file looks like this:
 
@@ -262,17 +260,13 @@ The configuration file looks like this:
 }
 ```
 
- 4. Initialize your project and push existing translations to Translation.io with:
-
-**NPM:**
+### 4. Initialize your project and push existing translations to Translation.io with:
 
 ```bash
-$ npm run extract --overwrite && npm run compile
-```
+# NPM
+npm run extract --overwrite && npm run compile
 
-**Yarn:**
-
-```bash
+# Yarn
 $ yarn extract --overwrite && yarn compile
 ```
 
