@@ -27,5 +27,7 @@
     "@lingui/cli": "^3.11",
     "@lingui/macro": "^3.11",
     "@lingui/react": "^3.11",
+    "@babel/core": ">=7.0",
+    "babel-plugin-macros": ">=2.0"
   }
 }

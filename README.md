@@ -74,21 +74,21 @@ return <Trans>
   Hello {name}
 </Trans>
 
-// Simple HTML Tags
-// => Translators see "Text with <0>HTML</0> tags"
+// Simple HTML Tags.
+// Translators will see "Text with <0>HTML</0> tags"
 return <Trans>
   Text with <em>HTML</em> tags
 </Trans>
 
 // Complex HTML Tags
-// => Translators see "Text with a <0>link</0>"
+// Translators will see "Text with a <0>link</0>"
 return <Trans>
   Text with a
   <a href="https://google.com" target="_blank">link</a>
 </Trans>
 
-// Context (to help translators and get different translations for the same source text)
-// => Every id should be unique
+// Context
+// Helps translators differentiate translations for the same source text (IDs should be unique)
 return <Trans id="meeting someone">
   Date
 </Trans>
@@ -100,7 +100,15 @@ return <Trans id="moment in time">
 
 #### Plural
 
-=> see forms and rules here: https://translation.io
+English has only 2 plural forms (`one` and `other`) but other languages
+have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
+`other`.
+
+Translators will have the correct list of plural forms proposed directly
+in the interface, with examples in their target language.
+
+You can find the complete list of plural forms and plural rules here:
+https://translation.io/docs/languages_with_plural_cases
 
 ```jsx
 // Regular
@@ -159,6 +167,16 @@ t({
 
 #### Plural
 
+English has only 2 plural forms (`one` and `other`) but other languages
+have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
+`other`.
+
+Translators will have the correct list of plural forms proposed directly
+in the interface, with examples in their target language.
+
+You can find the complete list of plural forms and plural rules here:
+https://translation.io/docs/languages_with_plural_cases
+
 ```javascript
 // Regular
 plural(count, {
@@ -179,4 +197,85 @@ plural(count, {
   other: `Hello ${name}, you've got # messages`
 })
 ```
+
+## Installation
+
+### Quick install
+
+ 1. Install the package
+
+ 1.1 Quick Install
+
+Use our meta-package to install Lingui easily.
+
+**NPM:**
+
+```bash
+$ npm install @translation/lingui
+```
+
+**Yarn**
+
+```bash
+$ yarn add @translation/lingui
+```
+
+ 1.2. Fine-Grained Install
+
+More complex but cleaner install, with some packages in development only.
+
+**NPM:**
+
+```bash
+$ npm install --save-dev @lingui/cli @lingui/macro
+$ npm install --save-dev @babel/core babel-plugin-macros
+$ npm install @lingui/react
+````
+
+**Yarn:**
+
+```bash
+$ yarn add --dev @lingui/cli @lingui/macro
+$ yarn add --dev @babel/core babel-plugin-macros
+$ yarn add @lingui/react
+````
+
+
+ 2. Create a new translation project [from the UI](https://translation.io).
+ 3. Copy the configuration file into your app (`.linguirc`).
+
+The configuration file looks like this:
+
+```json
+{
+  "locales": ["en", "fr", "nl", "de", "es"],
+  "sourceLocale": "en",
+  "catalogs": [{
+    "path": "src/locales/{locale}/messages",
+    "include": ["src"]
+  }],
+  "format": "po",
+  "service": {
+    "name": "TranslationIO",
+    "apiKey": "abcdefghijklmnopqrstuvwxyz012345"
+  }
+}
+```
+
+ 4. Initialize your project and push existing translations to Translation.io with:
+
+**NPM:**
+
+```bash
+$ npm run extract --overwrite && npm run compile
+```
+
+**Yarn:**
+
+```bash
+$ yarn extract --overwrite && yarn compile
+```
+
+If you need to add or remove languages in the future, please read our
+[documentation](https://translation.io/blog/adding-target-languages) about that.
 
