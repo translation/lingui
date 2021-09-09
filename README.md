@@ -65,24 +65,37 @@ Table of contents
 
 ```jsx
 // Regular
-return <Trans>Text to be translated</Trans>
+return <Trans>
+  Text to be translated
+</Trans>
 
 // Variable Interpolation
-return <Trans>Hello {name}</Trans>
+return <Trans>
+  Hello {name}
+</Trans>
 
 // Simple HTML Tags
 // => Translators see "Text with <0>HTML</0> tags"
-return <Trans>Text with <em>HTML</em> tags</Trans>
+return <Trans>
+  Text with <em>HTML</em> tags
+</Trans>
 
 // Complex HTML Tags
 // => Translators see "Text with a <0>link</0>"
-return <Trans>Text with a <a href="https://google.com" target="_blank">link</a></Trans>
+return <Trans>
+  Text with a
+  <a href="https://google.com" target="_blank">link</a>
+</Trans>
 
 // Context (to help translators and get different translations for the same source text)
-// Every id should be unique
-return <Trans id="meeting someone">Date</Trans>
+// => Every id should be unique
+return <Trans id="meeting someone">
+  Date
+</Trans>
 
-return <Trans id="moment in time">Date</Trans>
+return <Trans id="moment in time">
+  Date
+</Trans>
 ```
 
 #### Plural
