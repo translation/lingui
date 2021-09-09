@@ -8,7 +8,7 @@ Use this <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
  or this <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
 Write only the source text, and keep it synchronized with your translators on
-[Translation.io](https://translation.io)
+[Translation.io](https://translation.io).
 
 <a href="https://translation.io">
   <img width="720px" alt="Translation.io interface" src="https://translation.io/gifs/translation.gif">
@@ -24,7 +24,8 @@ framework.
 
  * This repository only provides additional documentation and a dumb
 meta-package to simplify the [Lingui](https://github.com/lingui/js-lingui)
-installation. You can also refer to the [Lingui documentation](https://lingui.js.org/).
+installation. You can also refer to the [Lingui documentation](https://lingui.js.org/)
+for more advanced features.
 
 ----------
 
@@ -56,10 +57,95 @@ Table of contents
    * [Others](#others)
  * [License](#license)
 
- ## Translation syntaxes
+## Translation syntaxes
 
- ### React JSX Syntax
+### React JSX Syntax
 
+#### Singular
 
- ### JavaScript Syntax
+```jsx
+// Regular
+<Trans>Text to be translated</Trans>
+
+// Variable Interpolation
+<Trans>Hello {name}</Trans>
+
+// Simple HTML Tags
+<Trans>One sentence with <em>HTML</em> tags</Trans>
+
+// Complex HTML Tags
+<Trans>One sentence with a <a href="https://google.com" target="_blank">link</a></Trans>
+
+// Comment for translators
+<Trans comment="comments for translators">One sentence</Trans>
+
+// Context (to allow different translations for the same source text)
+<Trans id="my context">One sentence</Trans>
+```
+
+#### Plural
+
+=> see forms and rules here: https://translation.io
+
+```jsx
+// Pluralization
+<Plural
+  value={count}
+  one="You've got 1 message"
+  other="You've got # messages"
+/>
+
+// Custom plural forms
+<Plural
+  value={count}
+  _42="You've got the solution of the universe!"
+  one="You've got 1 message"
+  other="You've got # messages"
+/>
+
+// Complex plural forms with interpolation
+<Plural
+  value={count}
+  one={`Hello ${name}, you've got 1 message`}
+  other={`Hello ${name}, you've got # messages`}
+/>
+
+// Complex plural forms with HTML tags
+<Plural
+  value={count}
+  one={<Trans>You've got <strong>1</strong> message</Trans>}
+  other={<Trans>You've got <strong>#</strong> messages</Trans>}
+/>
+
+// Add plural with id and comments?
+```
+
+### JavaScript Syntax
+
+#### Singular
+
+```javascript
+// Regular
+t`Text to be translated`
+
+// Variable Interpolation
+t`Hello ${name}`
+
+// Comment for translators
+t({
+   id: "msg.refresh",
+   message: "One inline sentence with an id"
+})
+
+// Context (to allow different translations for the same source text)
+```
+
+#### Plural
+
+```javascript
+plural(count, {
+  one: "one inline plural sentence without id",
+  other: "# inline plural sentences without id"
+})
+```
 
