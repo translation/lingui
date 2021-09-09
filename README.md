@@ -139,7 +139,7 @@ Translators will have the correct list of plural forms proposed directly
 in the interface, with examples in their target language.
 
 You can find the complete list of plural forms and plural rules here:
-https://translation.io/docs/languages_with_plural_cases
+[available languages and plural forms](https://translation.io/docs/languages_with_plural_cases)
 
 ### JavaScript Syntax
 
@@ -260,7 +260,9 @@ The configuration file looks like this:
 }
 ```
 
-### 4. Initialize your project and push existing translations to Translation.io with:
+### 4. Initialize your project
+
+Initialize your project and push existing translations to Translation.io with:
 
 ```bash
 # NPM
