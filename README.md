@@ -40,7 +40,6 @@ Table of contents
  * [Installation](#installation)
  * [Usage](#usage)
    * [Sync](#sync)
-   * [Sync and Show Purgeable](#sync-and-show-purgeable)
    * [Sync and Purge](#sync-and-purge)
  * [Manage Languages](#manage-languages)
    * [Add or Remove Language](#add-or-remove-language)
@@ -48,13 +47,12 @@ Table of contents
    * [Custom Languages](#custom-languages)
    * [Fallbacks](#fallbacks)
  * [Change the current locale](#change-the-current-locale)
-   * [Globally](#globally)
-   * [Locally](#locally)
- * [Contributing](#contributing)
+ * [Dynamic loading of .JS translation catalogs](#dynamic-loading-of-js-translation-catalog)
  * [List of clients for Translation.io](#list-of-clients-for-translationio)
    * [Ruby on Rails (Ruby)](#ruby-on-rails-ruby)
    * [Laravel (PHP)](#laravel-php)
    * [Others](#others)
+ * [Contributing](#contributing)
  * [License](#license)
 
 ## Translation syntaxes
@@ -401,7 +399,7 @@ console.log(result) // "en"
 You will find more information about this package
 [here](https://lingui.js.org/ref/locale-detector.html)
 
-## Dynamic loading of .JS translation catalog
+## Dynamic loading of .JS translation catalogs
 
 It’s your responsibility to load the correct translation catalog based on the active locale.
 
