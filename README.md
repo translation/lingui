@@ -111,7 +111,8 @@ return <Plural
 // Custom plural forms
 return <Plural
   value={count}
-  _42="You've got the solution of the universe!"
+  _0="Your inbox is empty!"
+  _42="You've found the ultimate answer"
   one="You've got 1 message"
   other="You've got # messages"
 />
@@ -176,7 +177,8 @@ plural(count, {
 
 // Custom plural forms
 plural(count, {
-  _42: "You've got the solution of the universe!",
+  _0: "Your inbox is empty!",
+  _42: "You've found the ultimate answer",
   one: "You've got 1 message",
   other: "You've got # messages"
 })
@@ -272,8 +274,8 @@ npm run extract --overwrite && npm run compile
 $ yarn extract --overwrite && yarn compile
 ```
 
-If you need to add or remove languages in the future, please read our
-[documentation](https://translation.io/blog/adding-target-languages) about that.
+If you need to add or remove languages in the future, please read
+[this section](#add-or-remove-language) about that.
 
 ## Usage
 
@@ -361,3 +363,109 @@ fallback to `en`.
 You can find more information about Lingui fallback configuration
 [here](https://lingui.js.org/ref/conf.html#fallbacklocales).
 
+## Change the current locale
+
+You can change the current locale by using:
+
+```javascript
+import { i18n } from '@lingui/core'
+import { messages } from './locales/en/messages.js'
+
+// [...]
+
+i18n.load('en', messages)
+i18n.activate('en')
+```
+
+You may be able to detect the default locale of the user, based on many things
+like navigator meta tags, HTML language tag, subdomain, path, cookie, etc.
+
+The easiest way to do that would be to use the small `@lingui/detect-locale` package.
+
+```javascript
+import { detect, fromUrl, fromStorage, fromNavigator } from "@lingui/detect-locale"
+
+// can be a function with custom logic or just a string, `detect` method will handle it
+const DEFAULT_FALLBACK = () => "en"
+
+const result = detect(
+  fromUrl("lang"),
+  fromStorage("lang"),
+  fromNavigator(),
+  DEFAULT_FALLBACK
+)
+
+console.log(result) // "en"
+```
+
+You will find more information about this package
+[here](https://lingui.js.org/ref/locale-detector.html)
+
+## Dynamic loading of .JS translation catalog
+
+It’s your responsibility to load the correct translation catalog based on the active locale.
+
+There is a clean [dynamic loader helper](https://lingui.js.org/guides/dynamic-loading-catalogs.html)
+that will assist you with this task.
+
+## List of clients for Translation.io
+
+These implementations were usually started by contributors for their own projects.
+Some of them are officially supported by [Translation.io](https://translation.io)
+and some are not yet supported. However, they are quite well documented.
+
+Thanks a lot to these contributors for their hard work!
+
+### Ruby on Rails (Ruby)
+
+Officially Supported on [https://translation.io/rails](https://translation.io/rails)
+
+ * GitHub: https://github.com/translation/rails
+ * RubyGems: https://rubygems.org/gems/translation/
+
+Credits: [@aurels](https://github.com/aurels), [@michaelhoste](https://github.com/michaelhoste)
+
+### Laravel (PHP)
+
+Officially Supported on [https://translation.io/laravel](https://translation.io/laravel)
+
+ * GitHub: https://github.com/translation/laravel
+ * Packagist: https://packagist.org/packages/tio/laravel
+
+Credits: [@armandsar](https://github.com/armandsar), [@michaelhoste](https://github.com/michaelhoste)
+
+### React and React-Intl (JavaScript)
+
+ * GitHub: https://github.com/deecewan/translation-io
+ * NPM: https://www.npmjs.com/package/translation-io
+
+Credits: [@deecewan](https://github.com/deecewan)
+
+### Others
+
+If you want to create a new client for your favorite language or framework, please read our
+[Create a Translation.io Library](https://translation.io/docs/create-library)
+guide and use the special
+[init](https://translation.io/docs/create-library#initialization) and
+[sync](https://translation.io/docs/create-library#synchronization) endpoints.
+
+You can also use the more [traditional API](https://translation.io/docs/api).
+
+Feel free to contact us on [contact@translation.io](mailto:contact@translation.io) if
+you need some help or if you want to share your library.
+
+## Contributing
+
+This is a dumb meta-package that doesn't need any contribution.
+
+If you want to contribute, please refer to
+[the official Lingui CONTRIBUTING.md](https://github.com/lingui/js-lingui/blob/main/CONTRIBUTING.md)
+file.
+
+## License
+
+This meta-package is released under MIT license.
+
+The Lingui MIT License is located here [here](https://github.com/lingui/js-lingui/blob/main/LICENSE)
+
+(c) [https://translation.io](https://translation.io) / [contact@translation.io](mailto:contact@translation.io)
