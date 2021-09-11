@@ -2,7 +2,7 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
-Add this package to localize your **React** or **JavaScript** application.
+Add this package to localize your **React**, **React Native** or **JavaScript** application.
 
 Use this <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
  or this <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
@@ -61,6 +61,10 @@ Table of contents
 
 #### Singular
 
+```javascript
+import { Trans } from "@lingui/macro"
+```
+
 ```html
 <!-- Regular -->
 <Trans>
@@ -97,6 +101,10 @@ Table of contents
 ```
 
 #### Plural
+
+```javascript
+import { Plural } from "@lingui/macro"
+```
 
 ```html
 <!-- Regular -->
@@ -145,6 +153,10 @@ You can find the complete list of plural forms and plural rules here:
 #### Singular
 
 ```javascript
+import { t } from "@lingui/macro"
+```
+
+```javascript
 // Regular
 t`Text to be translated`
 
@@ -165,6 +177,10 @@ t({
 ```
 
 #### Plural
+
+```javascript
+import { plural } from "@lingui/macro"
+```
 
 ```javascript
 // Regular
@@ -239,7 +255,7 @@ the correct source and target languages.
 
 ### 3. Configure your project
 
-Copy the `.linguirc` configuration file that was generated for you at the
+Copy the `.linguirc` configuration file that was generated for you to the
 root of your application.
 
 The configuration file looks like this:
@@ -260,9 +276,48 @@ The configuration file looks like this:
 }
 ```
 
-### 4. Initialize your project
+### 4. Setup your application
 
-Initialize your project and push existing translations to Translation.io with:
+For React (cf. [React Documentation](https://lingui.js.org/tutorials/react.html) or [React Native documentation](https://lingui.js.org/tutorials/react-native.html)):
+
+```javascript
+import { i18n } from '@lingui/core'
+import { I18nProvider } from '@lingui/react'
+import { en } from 'make-plural/plurals'         // Plural rules for English
+import { messages } from './locales/en/messages' // English catalog of translations
+import Inbox from './Inbox'
+
+i18n.loadLocaleData('en', { plurals: en })
+i18n.load('en', messages)
+i18n.activate('en')
+
+const App = () => (
+  <I18nProvider i18n={i18n}>
+    <Inbox />
+  </I18nProvider>
+)
+```
+
+For JavaScript (cf. [documentation](https://lingui.js.org/tutorials/javascript.html)):
+
+```javascript
+import { i18n } from '@lingui/core'
+import { en } from 'make-plural/plurals'         // Plural rules for English
+import { messages } from './locales/en/messages' // English catalog of translations
+
+i18n.loadLocaleData('en', { plurals: en })
+i18n.load('en', messages)
+i18n.activate('en')
+```
+
+### 5. Localize your code
+
+Localize your app using `<Trans>source text</Trans>` or ``t`source text` ``.
+
+### 6. Initialize your project
+
+Initialize your project and with your localizations and potential
+existing translations with:
 
 ```bash
 # NPM
