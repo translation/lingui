@@ -433,7 +433,8 @@ i18n.activate('en')
 You may be able to detect the default locale of the user, based on many things
 like navigator meta tags, HTML language tag, subdomain, path, cookie, etc.
 
-The easiest way to do that would be to use the small `@lingui/detect-locale` package.
+The easiest way to do that would be to use the small
+[`@lingui/detect-locale`](https://lingui.js.org/ref/locale-detector.html) package.
 
 ```javascript
 import { detect, fromUrl, fromStorage, fromNavigator } from "@lingui/detect-locale"
