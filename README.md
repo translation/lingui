@@ -47,7 +47,7 @@ Table of contents
    * [Custom Languages](#custom-languages)
    * [Fallbacks](#fallbacks)
  * [Change the current locale](#change-the-current-locale)
- * [Dynamic loading of .JS translation catalogs](#dynamic-loading-of-js-translation-catalog)
+ * [Dynamic loading of .JS translation catalogs](#dynamic-loading-of-js-translation-catalogs)
  * [List of clients for Translation.io](#list-of-clients-for-translationio)
    * [Ruby on Rails (Ruby)](#ruby-on-rails-ruby)
    * [Laravel (PHP)](#laravel-php)
@@ -61,53 +61,53 @@ Table of contents
 
 #### Singular
 
-```jsx
-// Regular
-return <Trans>
+```html
+<!-- Regular -->
+<Trans>
   Text to be translated
 </Trans>
 
-// Variable Interpolation
-return <Trans>
+<!-- Variable Interpolation -->
+<Trans>
   Hello {name}
 </Trans>
 
-// Simple HTML Tags.
-// Translators will see "Text with <0>HTML</0> tags"
-return <Trans>
+<!-- Simple HTML Tags. -->
+<!-- Translators will see "Text with <0>HTML</0> tags" -->
+<Trans>
   Text with <em>HTML</em> tags
 </Trans>
 
-// Complex HTML Tags
-// Translators will see "Text with a <0>link</0>"
-return <Trans>
+<!-- Complex HTML Tags -->
+<!-- Translators will see "Text with a <0>link</0>" -->
+<Trans>
   Text with a
   <a href="https://google.com" target="_blank">link</a>
 </Trans>
 
-// Context
-// Helps translators differentiate translations for the same source text (IDs should be unique)
-return <Trans id="meeting someone">
+<!-- Context -->
+<!-- Helps translators differentiate translations for the same source text (IDs should be unique) -->
+<Trans id="meeting someone">
   Date
 </Trans>
 
-return <Trans id="moment in time">
+<Trans id="moment in time">
   Date
 </Trans>
 ```
 
 #### Plural
 
-```jsx
-// Regular
-return <Plural
+```html
+<!-- Regular -->
+<Plural
   value={count}
   one="You've got 1 message"
   other="You've got # messages"
 />
 
-// Custom plural forms
-return <Plural
+<!-- Custom plural forms -->
+<Plural
   value={count}
   _0="Your inbox is empty!"
   _42="You've found the ultimate answer"
@@ -115,15 +115,15 @@ return <Plural
   other="You've got # messages"
 />
 
-// Variable interpolation
-return <Plural
+<!-- Variable interpolation -->
+<Plural
   value={count}
   one={`Hello ${name}, you've got 1 message`}
   other={`Hello ${name}, you've got # messages`}
 />
 
-// HTML tags
-return <Plural
+<!-- HTML tags -->
+<Plural
   value={count}
   one={<Trans>You've got <strong>1</strong> message</Trans>}
   other={<Trans>You've got <strong>#</strong> messages</Trans>}
@@ -293,7 +293,7 @@ $ yarn extract --overwrite && yarn compile
 ### Sync and Purge
 
 If you need to remove unused strings from Translation.io, using
-the current branch as reference:
+the current branch as reference, use the `--clean` option.
 
 ```bash
 # NPM
