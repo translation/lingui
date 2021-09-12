@@ -335,10 +335,10 @@ existing translations with:
 
 ```bash
 # NPM
-npm run sync # alias of "npm run extract --overwrite && npm run compile"
+npm run sync
 
 # Yarn
-yarn sync # alias of "yarn extract --overwrite && yarn compile"
+yarn sync
 ```
 
 If you need to add or remove languages in the future, please read
@@ -353,10 +353,10 @@ and at the same time generate the minified Javascript catalog files, simply run:
 
 ```bash
 # NPM
-npm run sync # alias of "npm run extract --overwrite && npm run compile"
+npm run sync   # alias of `npm run extract --overwrite && npm run compile`
 
 # Yarn
-yarn sync # alias of "yarn extract --overwrite && yarn compile"
+yarn sync      # alias of `yarn extract --overwrite && yarn compile`
 ```
 
 ### Sync and Purge
@@ -366,15 +366,15 @@ the current branch as reference, use the `--clean` option.
 
 ```bash
 # NPM
-npm run sync_and_purge # alias of "npm run extract --overwrite --clean && npm run compile"
+npm run sync_and_purge   # alias of `npm run extract --overwrite --clean && npm run compile`
 
 # Yarn
-yarn sync_and_purge # alias "yarn extract --overwrite --clean && yarn compile"
+yarn sync_and_purge      # alias `yarn extract --overwrite --clean && yarn compile`
 ```
 
 As the name says, this operation will also perform a sync at the same time.
 
-Warning: all strings that are not present in the current local branch will be
+**Warning:** all strings that are not present in the current local branch will be
 **permanently deleted from Translation.io**.
 
 ## Manage Languages
@@ -436,10 +436,12 @@ You can change the current locale by using:
 
 ```javascript
 import { i18n } from '@lingui/core'
+import { en } from 'make-plural/plurals'
 import { messages } from './locales/en/messages.js'
 
 // [...]
 
+i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 ```
@@ -475,6 +477,36 @@ It’s your responsibility to load the correct translation catalog based on the 
 
 There is a clean [dynamic loader helper](https://lingui.js.org/guides/dynamic-loading-catalogs.html)
 that will assist you with this task.
+
+```typescript
+// i18n.ts
+
+import { i18n } from '@lingui/core';
+import { en, cs } from 'make-plural/plurals'
+
+export const locales = {
+  en: "English",
+  cs: "Česky",
+};
+export const defaultLocale = "en";
+
+i18n.loadLocaleData({
+  en: { plurals: en },
+  cs: { plurals: cs },
+})
+
+/**
+* We do a dynamic import of just the catalog that we need
+* @param locale any locale string
+*/
+export async function dynamicActivate(locale: string) {
+  const { messages } = await import(`./locales/${locale}/messages`)
+  i18n.load(locale, messages)
+  i18n.activate(locale)
+}
+```
+
+Please read more about this loader [here](https://lingui.js.org/guides/dynamic-loading-catalogs.html).
 
 ## List of clients for Translation.io
 
