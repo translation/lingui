@@ -254,12 +254,10 @@ Add these lines to your `package.json` to make your life easier.
 
 ```json
 {
-   // ...
    "scripts": {
       "sync": "lingui extract --overwrite && lingui compile",
       "sync_and_purge": "lingui extract --overwrite --clean && lingui compile",
    }
-   // ...
 }
 ```
 
