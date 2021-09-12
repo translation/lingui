@@ -248,12 +248,27 @@ yarn add --dev @babel/core babel-plugin-macros
 yarn add @lingui/react
 ```
 
-### 2. Create a new translation project
+### 2. Add the following scripts (optional)
+
+Add these lines to your `package.json` to make your life easier.
+
+```json
+{
+   // ...
+   "scripts": {
+      "sync": "lingui extract --overwrite && lingui compile",
+      "sync_and_purge": "lingui extract --overwrite --clean && lingui compile",
+   }
+   // ...
+}
+```
+
+### 3. Create a new translation project
 
 Create your new project [from the UI](https://translation.io) and select
 the correct source and target languages.
 
-### 3. Configure your project
+### 4. Configure your project
 
 Copy the `.linguirc` configuration file that was generated for you to the
 root of your application.
@@ -276,7 +291,7 @@ The configuration file looks like this:
 }
 ```
 
-### 4. Setup your application
+### 5. Setup your application
 
 For React (cf. [React Documentation](https://lingui.js.org/tutorials/react.html) or [React Native documentation](https://lingui.js.org/tutorials/react-native.html)):
 
@@ -310,21 +325,22 @@ i18n.load('en', messages)
 i18n.activate('en')
 ```
 
-### 5. Localize your code
+### 6. Localize your code
 
-Localize your app using `<Trans>source text</Trans>` or ``t`source text` ``.
+Localize your app using <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
+or <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
-### 6. Initialize your project
+### 7. Initialize your project
 
 Initialize your project and with your localizations and potential
 existing translations with:
 
 ```bash
 # NPM
-npm run extract --overwrite && npm run compile
+npm run sync # alias of "npm run extract --overwrite && npm run compile"
 
 # Yarn
-$ yarn extract --overwrite && yarn compile
+yarn sync # alias of "yarn extract --overwrite && yarn compile"
 ```
 
 If you need to add or remove languages in the future, please read
@@ -339,10 +355,10 @@ and at the same time generate the minified Javascript catalog files, simply run:
 
 ```bash
 # NPM
-npm run extract --overwrite && npm run compile
+npm run sync # alias of "npm run extract --overwrite && npm run compile"
 
 # Yarn
-$ yarn extract --overwrite && yarn compile
+yarn sync # alias of "yarn extract --overwrite && yarn compile"
 ```
 
 ### Sync and Purge
@@ -352,10 +368,10 @@ the current branch as reference, use the `--clean` option.
 
 ```bash
 # NPM
-npm run extract --overwrite --clean && npm run compile
+npm run sync_and_purge # alias of "npm run extract --overwrite --clean && npm run compile"
 
 # Yarn
-$ yarn extract --overwrite --clean && yarn compile
+yarn sync_and_purge # alias "yarn extract --overwrite --clean && yarn compile"
 ```
 
 As the name says, this operation will also perform a sync at the same time.
