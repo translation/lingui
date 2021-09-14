@@ -254,10 +254,10 @@ Add these lines to your `package.json` to make your life easier.
 
 ```json
 {
-   "scripts": {
-      "sync": "lingui extract --overwrite && lingui compile",
-      "sync_and_purge": "lingui extract --overwrite --clean && lingui compile",
-   }
+  "scripts": {
+    "sync": "lingui extract --overwrite && lingui compile",
+    "sync_and_purge": "lingui extract --overwrite --clean && lingui compile"
+  }
 }
 ```
 
@@ -325,8 +325,8 @@ i18n.activate('en')
 
 ### 6. Localize your code
 
-Localize your app using <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
-or <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
+Localize your app using the <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
+or the <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
 ### 7. Initialize your project
 
@@ -369,7 +369,7 @@ the current branch as reference, use the `--clean` option.
 npm run sync_and_purge   # alias of `npm run extract --overwrite --clean && npm run compile`
 
 # Yarn
-yarn sync_and_purge      # alias `yarn extract --overwrite --clean && yarn compile`
+yarn sync_and_purge      # alias of `yarn extract --overwrite --clean && yarn compile`
 ```
 
 As the name says, this operation will also perform a sync at the same time.
