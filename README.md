@@ -1,4 +1,4 @@
-# [Translation.io](https://translation.io) client for React & JavaScript (using [Lingui](https://github.com/lingui/js-lingui))
+# [Translation.io](https://translation.io/lingui) client for React & JavaScript (using [Lingui](https://github.com/lingui/js-lingui))
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
@@ -8,9 +8,9 @@ Use this <a href="#react-jsx-syntax">`<Trans>React syntax</Trans>`</a>
  or this <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
 Write only the source text, and keep it synchronized with your translators on
-[Translation.io](https://translation.io).
+[Translation.io](https://translation.io/lingui).
 
-<a href="https://translation.io">
+<a href="https://translation.io/lingui">
   <img width="720px" alt="Translation.io interface" src="https://translation.io/gifs/translation.gif">
 </a>
 
@@ -18,7 +18,7 @@ Write only the source text, and keep it synchronized with your translators on
 
 **Important Information:**
 
- * The [Translation.io](https://translation.io) client is directly integrated into
+ * The [Translation.io](https://translation.io/lingui) client is directly integrated into
 the great [Lingui](https://github.com/lingui/js-lingui) internationalization
 framework.
 
@@ -145,6 +145,10 @@ have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
 Translators will have the correct list of plural forms proposed directly
 in the interface, with examples in their target language.
 
+<a href="https://translation.io/lingui">
+  <img width="500px" alt="Translation.io interface" src="https://translation.io/gifs/lingui/translation-plural-forms.png">
+</a>
+
 You can find the complete list of plural forms and plural rules here:
 [available languages and plural forms](https://translation.io/docs/languages_with_plural_cases)
 
@@ -166,13 +170,13 @@ t`Hello ${name}`
 // Context
 // Helps translators differentiate translations for the same source text (IDs should be unique)
 t({
-   id: "meeting someone",
-   message: "Date"
+  id: "meeting someone",
+  message: "Date"
 })
 
 t({
-   id: "moment in time",
-   message: "Date"
+  id: "moment in time",
+  message: "Date"
 })
 ```
 
@@ -263,7 +267,7 @@ Add these lines to your `package.json` to make your life easier.
 
 ### 3. Create a new translation project
 
-Create your new project [from the UI](https://translation.io) and select
+Create your new project [from the UI](https://translation.io/lingui) and select
 the correct source and target languages.
 
 ### 4. Configure your project
