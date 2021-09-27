@@ -51,6 +51,7 @@ Table of contents
  * [List of clients for Translation.io](#list-of-clients-for-translationio)
    * [Ruby on Rails (Ruby)](#ruby-on-rails-ruby)
    * [Laravel (PHP)](#laravel-php)
+   * [React, React Native and JavaScript](#react-react-native-and-javascript)
    * [Others](#others)
  * [Contributing](#contributing)
  * [License](#license)
@@ -542,12 +543,15 @@ Officially Supported on [https://translation.io/laravel](https://translation.io/
 
 Credits: [@armandsar](https://github.com/armandsar), [@michaelhoste](https://github.com/michaelhoste)
 
-### React and React-Intl (JavaScript)
+### React, React Native and JavaScript
 
- * GitHub: https://github.com/deecewan/translation-io
- * NPM: https://www.npmjs.com/package/translation-io
+Officially Supported on [https://translation.io/lingui](https://translation.io/lingui)
 
-Credits: [@deecewan](https://github.com/deecewan)
+Translation.io is directly integrated in the great
+[Lingui](https://lingui.js.org/) internationalization project.
+
+ * GitHub: https://github.com/translation/lingui
+ * NPM: https://www.npmjs.com/package/@translation/lingui
 
 ### Others
 
