@@ -143,10 +143,10 @@ have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
 `other`.
 
 Translators will have the correct list of plural forms proposed directly
-in the interface, with examples in their target language.
+in the interface, with examples in their target language:
 
 <a href="https://translation.io/lingui">
-  <img width="500px" alt="Translation.io interface" src="https://translation.io/gifs/lingui/translation-plural-forms.png">
+  <img width="500px" alt="Translation.io plural management" src="https://translation.io/gifs/lingui/translation-plural-forms.png">
 </a>
 
 You can find the complete list of plural forms and plural rules here:
@@ -213,7 +213,11 @@ have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
 `other`.
 
 Translators will have the correct list of plural forms proposed directly
-in the interface, with examples in their target language.
+in the interface, with examples in their target language:
+
+<a href="https://translation.io/lingui">
+  <img width="500px" alt="Translation.io plural management" src="https://translation.io/gifs/lingui/translation-plural-forms.png">
+</a>
 
 You can find the complete list of plural forms and plural rules here:
 https://translation.io/docs/languages_with_plural_cases
