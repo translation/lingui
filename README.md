@@ -63,11 +63,11 @@ Table of contents
 
 #### Singular
 
-```javascript
+~~~javascript
 import { Trans } from "@lingui/macro"
-```
+~~~
 
-```html
+~~~html
 <!-- Regular -->
 <Trans>
   Text to be translated
@@ -100,15 +100,15 @@ import { Trans } from "@lingui/macro"
 <Trans id="moment in time">
   Date
 </Trans>
-```
+~~~
 
 #### Plural
 
-```javascript
+~~~javascript
 import { Plural } from "@lingui/macro"
-```
+~~~
 
-```html
+~~~html
 <!-- Regular -->
 <Plural
   value={count}
@@ -138,7 +138,7 @@ import { Plural } from "@lingui/macro"
   one={<Trans>You've got <strong>1</strong> message</Trans>}
   other={<Trans>You've got <strong>#</strong> messages</Trans>}
 />
-```
+~~~
 
 **Note:** English has only 2 plural forms (`one` and `other`) but other languages
 have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
@@ -158,11 +158,11 @@ You can find the complete list of plural forms and plural rules here:
 
 #### Singular
 
-```javascript
+~~~javascript
 import { t } from "@lingui/macro"
-```
+~~~
 
-```javascript
+~~~javascript
 // Regular
 t`Text to be translated`
 
@@ -180,15 +180,15 @@ t({
   id: "moment in time",
   message: "Date"
 })
-```
+~~~
 
 #### Plural
 
-```javascript
+~~~javascript
 import { plural } from "@lingui/macro"
-```
+~~~
 
-```javascript
+~~~javascript
 // Regular
 plural(count, {
   one: "You've got 1 message",
@@ -208,7 +208,7 @@ plural(count, {
   one: `Hello ${name}, you've got 1 message`,
   other: `Hello ${name}, you've got # messages`
 })
-```
+~~~
 
 **Note:** English has only 2 plural forms (`one` and `other`) but other languages
 have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
@@ -232,44 +232,44 @@ https://translation.io/docs/languages_with_plural_cases
 
 Quick way to install Lingui with the correct dependencies.
 
-```bash
+~~~bash
 # NPM
 npm install @translation/lingui
 
 # Yarn
 yarn add @translation/lingui
-```
+~~~
 
 #### Solution 2: Fine-Grained Install
 
 More complex but cleaner install, with some packages in development only.
 
-```bash
+~~~bash
 # NPM
 npm install --save-dev @lingui/cli @lingui/macro
 npm install --save-dev @babel/core babel-plugin-macros
 npm install @lingui/react
-```
+~~~
 
-```bash
+~~~bash
 # Yarn
 yarn add --dev @lingui/cli @lingui/macro
 yarn add --dev @babel/core babel-plugin-macros
 yarn add @lingui/react
-```
+~~~
 
 ### 2. Add the following scripts (optional)
 
 Add these lines to your `package.json` to make your life easier.
 
-```json
+~~~json
 {
   "scripts": {
     "sync": "lingui extract --overwrite && lingui compile",
     "sync_and_purge": "lingui extract --overwrite --clean && lingui compile"
   }
 }
-```
+~~~
 
 ### 3. Create a new translation project
 
@@ -283,7 +283,7 @@ root of your application.
 
 The configuration file looks like this:
 
-```json
+~~~json
 {
   "locales": ["en", "fr", "nl", "de", "es"],
   "sourceLocale": "en",
@@ -297,13 +297,13 @@ The configuration file looks like this:
     "apiKey": "abcdefghijklmnopqrstuvwxyz012345"
   }
 }
-```
+~~~
 
 ### 5. Setup your application
 
 For React (cf. [React Documentation](https://lingui.js.org/tutorials/react.html) or [React Native documentation](https://lingui.js.org/tutorials/react-native.html)):
 
-```javascript
+~~~javascript
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
 import { en } from 'make-plural/plurals'         // Plural rules for English
@@ -319,11 +319,11 @@ const App = () => (
     <Inbox />
   </I18nProvider>
 )
-```
+~~~
 
 For JavaScript (cf. [documentation](https://lingui.js.org/tutorials/javascript.html)):
 
-```javascript
+~~~javascript
 import { i18n } from '@lingui/core'
 import { en } from 'make-plural/plurals'         // Plural rules for English
 import { messages } from './locales/en/messages' // English catalog of translations
@@ -331,7 +331,7 @@ import { messages } from './locales/en/messages' // English catalog of translati
 i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
-```
+~~~
 
 ### 6. Localize your code
 
@@ -343,13 +343,13 @@ or the <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 Initialize your project and with your localizations and potential
 existing translations with:
 
-```bash
+~~~bash
 # NPM
 npm run sync
 
 # Yarn
 yarn sync
-```
+~~~
 
 If you need to add or remove languages in the future, please read
 [this section](#add-or-remove-language) about that.
@@ -361,26 +361,26 @@ If you need to add or remove languages in the future, please read
 To send new translatable strings and get new translations from Translation.io,
 and at the same time generate the minified Javascript catalog files, simply run:
 
-```bash
+~~~bash
 # NPM
 npm run sync   # alias of `npm run extract --overwrite && npm run compile`
 
 # Yarn
 yarn sync      # alias of `yarn extract --overwrite && yarn compile`
-```
+~~~
 
 ### Sync and Purge
 
 If you need to remove unused strings from Translation.io, using
 the current branch as reference, use the `--clean` option.
 
-```bash
+~~~bash
 # NPM
 npm run sync_and_purge   # alias of `npm run extract --overwrite --clean && npm run compile`
 
 # Yarn
 yarn sync_and_purge      # alias of `yarn extract --overwrite --clean && yarn compile`
-```
+~~~
 
 As the name says, this operation will also perform a sync at the same time.
 
@@ -419,9 +419,9 @@ or another instance of your application.
 A custom language is always be derived from an [existing language](https://translation.io/docs/languages).
 Its structure should be like:
 
-```ruby
+~~~ruby
 "#{existing_language_code}-#{custom_text}"
-```
+~~~
 
 where `custom_text` can only contain alphabetic characters and `-`.
 
@@ -444,7 +444,7 @@ You can find more information about Lingui fallback configuration
 
 You can change the current locale by using:
 
-```javascript
+~~~javascript
 import { i18n } from '@lingui/core'
 import { en } from 'make-plural/plurals'
 import { messages } from './locales/en/messages.js'
@@ -454,7 +454,7 @@ import { messages } from './locales/en/messages.js'
 i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
-```
+~~~
 
 You may be able to detect the default locale of the user, based on many things
 like navigator meta tags, HTML language tag, subdomain, path, cookie, etc.
@@ -462,7 +462,7 @@ like navigator meta tags, HTML language tag, subdomain, path, cookie, etc.
 The easiest way to do that would be to use the small
 [`@lingui/detect-locale`](https://lingui.js.org/ref/locale-detector.html) package.
 
-```javascript
+~~~javascript
 import { detect, fromUrl, fromStorage, fromNavigator } from "@lingui/detect-locale"
 
 // can be a function with custom logic or just a string, `detect` method will handle it
@@ -476,7 +476,7 @@ const result = detect(
 )
 
 console.log(result) // "en"
-```
+~~~
 
 You will find more information about this package
 [here](https://lingui.js.org/ref/locale-detector.html)
@@ -488,7 +488,7 @@ It’s your responsibility to load the correct translation catalog based on the 
 There is a clean [dynamic loader helper](https://lingui.js.org/guides/dynamic-loading-catalogs.html)
 that will assist you with this task.
 
-```typescript
+~~~typescript
 // i18n.ts
 
 import { i18n } from '@lingui/core';
@@ -514,7 +514,7 @@ export async function dynamicActivate(locale: string) {
   i18n.load(locale, messages)
   i18n.activate(locale)
 }
-```
+~~~
 
 Please read more about this loader [here](https://lingui.js.org/guides/dynamic-loading-catalogs.html).
 
