@@ -78,7 +78,7 @@ import { Trans } from "@lingui/macro"
   Hello {name}
 </Trans>
 
-<!-- Simple HTML Tags. -->
+<!-- Simple HTML Tags -->
 <!-- Translators will see "Text with <0>HTML</0> tags" -->
 <Trans>
   Text with <em>HTML</em> tags
