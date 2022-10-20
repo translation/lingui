@@ -34,7 +34,7 @@ Need help? [contact@translation.io](mailto:contact@translation.io)
 Table of contents
 =================
 
- * [Translation syntaxes](#translation-syntaxes)
+ * [Localization syntaxes](#localization-syntaxes)
    * [React JSX Syntax](#react-jsx-syntax)
    * [JavaScript Syntax](#javascript-syntax)
  * [Installation](#installation)
@@ -57,7 +57,7 @@ Table of contents
  * [Contributing](#contributing)
  * [License](#license)
 
-## Translation syntaxes
+## Localization syntaxes
 
 ### React JSX Syntax
 
