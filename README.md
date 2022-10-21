@@ -340,8 +340,8 @@ or the <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
 ### 7. Initialize your project
 
-Initialize your project with your localizations and potential
-existing translations with:
+Run the following commands to push your source keys and 
+existing translations to Translation.io:
 
 ~~~bash
 # NPM
