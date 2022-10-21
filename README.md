@@ -395,8 +395,8 @@ You can add or remove a language by updating `"locales": []` in your
 `.linguirc` file, and syncing your project again.
 
 If you want to add a new language with existing translations (ex. if you already have
-a translated PO file in your project), you will need to create a new empty project on
-Translation.io and sync your project for the first time for them to appear.
+a translated PO file in your project), you will need to create a
+new empty project on Translation.io and init it for the first time again.
 
 ### Edit Language
 
