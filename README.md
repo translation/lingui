@@ -31,8 +31,7 @@ for more advanced features.
 
 Need help? [contact@translation.io](mailto:contact@translation.io)
 
-Table of contents
-=================
+## Table of contents
 
  * [Localization syntaxes](#localization-syntaxes)
    * [React JSX Syntax](#react-jsx-syntax)
