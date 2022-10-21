@@ -340,7 +340,7 @@ or the <a href="#javascript-syntax">``t`JavaScript syntax` ``</a>.
 
 ### 7. Initialize your project
 
-Initialize your project and with your localizations and potential
+Initialize your project with your localizations and potential
 existing translations with:
 
 ~~~bash
