@@ -418,11 +418,11 @@ or another instance of your application.
 A custom language is always be derived from an [existing language](https://translation.io/docs/languages).
 Its structure should be like:
 
-~~~ruby
-"#{existing_language_code}-#{custom_text}"
+~~~javascript
+`${existingLanguageCode}-${customText}`
 ~~~
 
-where `custom_text` can only contain alphabetic characters and `-`.
+where `customText` can only contain alphabetic characters and `-`.
 
 Examples: `en-microsoft` or `fr-BE-custom`.
 
