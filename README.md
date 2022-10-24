@@ -139,7 +139,7 @@ import { Plural } from "@lingui/macro"
 />
 ~~~
 
-**Note:** English has only 2 plural forms (`one` and `other`) but other languages
+**Note:** English has only 2 plural forms (`one` and `other`), but other languages
 have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
 `other`.
 
