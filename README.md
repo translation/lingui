@@ -66,39 +66,41 @@ Need help? [contact@translation.io](mailto:contact@translation.io)
 import { Trans } from "@lingui/macro"
 ~~~
 
-~~~html
-<!-- Regular -->
+~~~jsx
+{/* Regular */}
 <Trans>
   Text to be translated
 </Trans>
 
-<!-- Variable Interpolation -->
+{/* Variable Interpolation */}
 <Trans>
   Hello {name}
 </Trans>
 
-<!-- Simple HTML Tags -->
-<!-- Translators will see "Text with <0>HTML</0> tags" -->
+{/* Simple HTML Tags 
+   -> Translators will see "Text with <0>HTML</0> tags" */}
 <Trans>
   Text with <em>HTML</em> tags
 </Trans>
 
-<!-- Complex HTML Tags -->
-<!-- Translators will see "Text with a <0>link</0>" -->
+{/* Complex HTML Tags 
+   -> Translators will see "Text with a <0>link</0>" */}
 <Trans>
   Text with a
   <a href="https://google.com" target="_blank">link</a>
 </Trans>
 
-<!-- Context -->
-<!-- Helps translators differentiate translations for the same source text (IDs should be unique) -->
-<Trans id="meeting someone">
-  Date
-</Trans>
+{/* Context 
+   -> Helps translators differentiate translations for the same source text (IDs should be unique) */}
+<div>
+  <Trans id="meeting someone">
+    Date
+  </Trans>
 
-<Trans id="moment in time">
-  Date
-</Trans>
+  <Trans id="moment in time">
+    Date
+  </Trans>
+</div>
 ~~~
 
 #### Plural
@@ -107,15 +109,15 @@ import { Trans } from "@lingui/macro"
 import { Plural } from "@lingui/macro"
 ~~~
 
-~~~html
-<!-- Regular -->
+~~~jsx
+{/* Regular */}
 <Plural
   value={count}
   one="You've got 1 message"
   other="You've got # messages"
 />
 
-<!-- Custom plural forms -->
+{/* Custom plural forms */}
 <Plural
   value={count}
   _0="Your inbox is empty!"
@@ -124,14 +126,14 @@ import { Plural } from "@lingui/macro"
   other="You've got # messages"
 />
 
-<!-- Variable interpolation -->
+{/* Variable interpolation */}
 <Plural
   value={count}
   one={`Hello ${name}, you've got 1 message`}
   other={`Hello ${name}, you've got # messages`}
 />
 
-<!-- HTML tags -->
+{/* HTML tags */}
 <Plural
   value={count}
   one={<Trans>You've got <strong>1</strong> message</Trans>}
