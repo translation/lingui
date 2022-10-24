@@ -304,7 +304,7 @@ The configuration file looks like this:
 
 For React (cf. [React Documentation](https://lingui.js.org/tutorials/react.html) or [React Native documentation](https://lingui.js.org/tutorials/react-native.html)):
 
-~~~javascript
+~~~jsx
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
 import { en } from 'make-plural/plurals'         // Plural rules for English
