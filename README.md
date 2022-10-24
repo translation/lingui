@@ -530,7 +530,7 @@ We are thankful to all contributors for their hard work!
 
 ### Ruby on Rails (Ruby)
 
-Officially Supported on [https://translation.io/rails](https://translation.io/rails)
+Officially supported on [https://translation.io/rails](https://translation.io/rails)
 
  * GitHub: https://github.com/translation/rails
  * RubyGems: https://rubygems.org/gems/translation/
@@ -539,7 +539,7 @@ Credits: [@aurels](https://github.com/aurels), [@michaelhoste](https://github.co
 
 ### Laravel (PHP)
 
-Officially Supported on [https://translation.io/laravel](https://translation.io/laravel)
+Officially supported on [https://translation.io/laravel](https://translation.io/laravel)
 
  * GitHub: https://github.com/translation/laravel
  * Packagist: https://packagist.org/packages/tio/laravel
@@ -548,7 +548,7 @@ Credits: [@armandsar](https://github.com/armandsar), [@michaelhoste](https://git
 
 ### React, React Native and JavaScript
 
-Officially Supported on [https://translation.io/lingui](https://translation.io/lingui)
+Officially supported on [https://translation.io/lingui](https://translation.io/lingui)
 
 Translation.io is directly integrated in the great
 [Lingui](https://lingui.js.org/) internationalization project.
@@ -558,10 +558,12 @@ Translation.io is directly integrated in the great
 
 ### Angular
 
-Officially Supported on [https://translation.io/angular](https://translation.io/angular)
+Officially supported on [https://translation.io/angular](https://translation.io/angular)
 
  * GitHub: https://github.com/translation/angular
  * NPM: https://www.npmjs.com/package/@translation/angular
+ 
+Credits: [@SimonCorellia](https://github.com/SimonCorellia), [@didier-84](hthttps://github.com/didier-84), [@michaelhoste](https://github.com/michaelhoste)
 
 ### Others
 
@@ -573,8 +575,8 @@ guide and use the special
 
 You can also use the more [traditional API](https://translation.io/docs/api).
 
-Feel free to contact us on [contact@translation.io](mailto:contact@translation.io) if
-you need some help or if you want to share your library.
+Feel free to contact us on [contact@translation.io](mailto:contact@translation.io)
+if you need some help or if you want to share your library.
 
 ## Contributing
 
