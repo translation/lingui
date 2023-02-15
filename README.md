@@ -24,7 +24,7 @@ framework.
 
  * This repository only provides additional documentation and a useful
 meta-package to simplify the [Lingui](https://github.com/lingui/js-lingui)
-installation. You can also refer to the [Lingui documentation](https://lingui.js.org/)
+installation. You can also refer to the [Lingui documentation](https://lingui.dev/)
 for more advanced features.
 
 ----------
@@ -77,21 +77,23 @@ import { Trans } from "@lingui/macro"
   Hello {name}
 </Trans>
 
-{/* Simple HTML Tags 
-   -> Translators will see "Text with <0>HTML</0> tags" */}
+{/* Comment for translators */}
+<Trans comment="Acronym for Key Performance Indicator">
+  View KPIs
+</Trans>
+
+{/* Simple HTML Tags: translators will see "Text with <0>HTML</0> tags" */}
 <Trans>
   Text with <em>HTML</em> tags
 </Trans>
 
-{/* Complex HTML Tags 
-   -> Translators will see "Text with a <0>link</0>" */}
+{/* Complex HTML Tags: translators will see "Text with a <0>link</0>" */}
 <Trans>
   Text with a
   <a href="https://google.com" target="_blank">link</a>
 </Trans>
 
-{/* Context 
-   -> Helps translators differentiate translations for the same source text (IDs should be unique) */}
+{/* Context: helps translators differentiate translations for the same source text (IDs should be unique) */}
 <div>
   <Trans id="meeting someone">
     Date
@@ -170,8 +172,13 @@ t`Text to be translated`
 // Variable Interpolation
 t`Hello ${name}`
 
-// Context
-// Helps translators differentiate translations for the same source text (IDs should be unique)
+// Comment for translators
+t({
+  comment: "Acronym for Key Performance Indicator",
+  message: "View KPIs"
+})
+
+// Context: helps translators differentiate translations for the same source text (IDs should be unique)
 t({
   id: "meeting someone",
   message: "Date"
@@ -302,7 +309,7 @@ The configuration file looks like this:
 
 ### 5. Setup your application
 
-For React (cf. [React Documentation](https://lingui.js.org/tutorials/react.html) or [React Native documentation](https://lingui.js.org/tutorials/react-native.html)):
+For React (cf. [React Documentation](https://lingui.dev/tutorials/react.html) or [React Native documentation](https://lingui.dev/tutorials/react-native.html)):
 
 ~~~jsx
 import { i18n } from '@lingui/core'
@@ -322,7 +329,7 @@ const App = () => (
 )
 ~~~
 
-For JavaScript (cf. [documentation](https://lingui.js.org/tutorials/javascript.html)):
+For JavaScript (cf. [documentation](https://lingui.dev/tutorials/javascript.html)):
 
 ~~~javascript
 import { i18n } from '@lingui/core'
@@ -439,7 +446,7 @@ Note that fallbacks are chained, so `en-US-custom` will fallback to `en-US` that
 fallback to `en`.
 
 You can find more information about Lingui fallback configuration
-[here](https://lingui.js.org/ref/conf.html#fallbacklocales).
+[here](https://lingui.dev/ref/conf.html#fallbacklocales).
 
 ## Change the current locale
 
@@ -461,7 +468,7 @@ You may be able to detect the default locale of the user, based on many things
 like navigator meta tags, HTML language tag, subdomain, path, cookie, etc.
 
 The easiest way to do that would be to use the small
-[`@lingui/detect-locale`](https://lingui.js.org/ref/locale-detector.html) package.
+[`@lingui/detect-locale`](https://lingui.dev/ref/locale-detector.html) package.
 
 ~~~javascript
 import { detect, fromUrl, fromStorage, fromNavigator } from "@lingui/detect-locale"
@@ -480,13 +487,13 @@ console.log(result) // "en"
 ~~~
 
 You will find more information about this package
-[here](https://lingui.js.org/ref/locale-detector.html)
+[here](https://lingui.dev/ref/locale-detector.html)
 
 ## Dynamic loading of .JS translation catalogs
 
 It’s your responsibility to load the correct translation catalog based on the active locale.
 
-There is a clean [dynamic loader helper](https://lingui.js.org/guides/dynamic-loading-catalogs.html)
+There is a clean [dynamic loader helper](https://lingui.dev/guides/dynamic-loading-catalogs.html)
 that will assist you with this task.
 
 ~~~typescript
@@ -517,7 +524,7 @@ export async function dynamicActivate(locale: string) {
 }
 ~~~
 
-Please read more about this loader [here](https://lingui.js.org/guides/dynamic-loading-catalogs.html).
+Please read more about this loader [here](https://lingui.dev/guides/dynamic-loading-catalogs.html).
 
 ## List of clients for Translation.io
 
@@ -551,7 +558,7 @@ Credits: [@armandsar](https://github.com/armandsar), [@michaelhoste](https://git
 Officially supported on [https://translation.io/lingui](https://translation.io/lingui)
 
 Translation.io is directly integrated in the great
-[Lingui](https://lingui.js.org/) internationalization project.
+[Lingui](https://lingui.dev/) internationalization project.
 
  * GitHub: https://github.com/translation/lingui
  * NPM: https://www.npmjs.com/package/@translation/lingui
