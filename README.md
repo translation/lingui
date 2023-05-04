@@ -309,7 +309,7 @@ The configuration file looks like this:
 
 ### 5. Setup your application
 
-For React (cf. [React Documentation](https://lingui.dev/tutorials/react.html) or [React Native documentation](https://lingui.dev/tutorials/react-native.html)):
+For React (cf. [React Documentation](https://lingui.dev/tutorials/react) or [React Native documentation](https://lingui.dev/tutorials/react-native)):
 
 ~~~jsx
 import { i18n } from '@lingui/core'
@@ -329,7 +329,7 @@ const App = () => (
 )
 ~~~
 
-For JavaScript (cf. [documentation](https://lingui.dev/tutorials/javascript.html)):
+For JavaScript (cf. [documentation](https://lingui.dev/tutorials/javascript)):
 
 ~~~javascript
 import { i18n } from '@lingui/core'
@@ -446,7 +446,7 @@ Note that fallbacks are chained, so `en-US-custom` will fallback to `en-US` that
 fallback to `en`.
 
 You can find more information about Lingui fallback configuration
-[here](https://lingui.dev/ref/conf.html#fallbacklocales).
+[here](https://lingui.dev/ref/conf#fallbacklocales).
 
 ## Change the current locale
 
@@ -468,7 +468,7 @@ You may be able to detect the default locale of the user, based on many things
 like navigator meta tags, HTML language tag, subdomain, path, cookie, etc.
 
 The easiest way to do that would be to use the small
-[`@lingui/detect-locale`](https://lingui.dev/ref/locale-detector.html) package.
+[`@lingui/detect-locale`](https://lingui.dev/ref/locale-detector) package.
 
 ~~~javascript
 import { detect, fromUrl, fromStorage, fromNavigator } from "@lingui/detect-locale"
@@ -487,13 +487,13 @@ console.log(result) // "en"
 ~~~
 
 You will find more information about this package
-[here](https://lingui.dev/ref/locale-detector.html)
+[here](https://lingui.dev/ref/locale-detector)
 
 ## Dynamic loading of .JS translation catalogs
 
 It’s your responsibility to load the correct translation catalog based on the active locale.
 
-There is a clean [dynamic loader helper](https://lingui.dev/guides/dynamic-loading-catalogs.html)
+There is a clean [dynamic loader helper](https://lingui.dev/guides/dynamic-loading-catalogs)
 that will assist you with this task.
 
 ~~~typescript
@@ -524,7 +524,7 @@ export async function dynamicActivate(locale: string) {
 }
 ~~~
 
-Please read more about this loader [here](https://lingui.dev/guides/dynamic-loading-catalogs.html).
+Please read more about this loader [here](https://lingui.dev/guides/dynamic-loading-catalogs).
 
 ## List of clients for Translation.io
 
