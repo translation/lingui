@@ -266,7 +266,7 @@ yarn add --dev @babel/core babel-plugin-macros
 yarn add @lingui/react
 ~~~
 
-### 2. Add the following scripts (optional)
+### 2. Add the following scripts
 
 Add these lines to your `package.json` to make your life easier.
 
@@ -371,10 +371,10 @@ and at the same time generate the minified Javascript catalog files, simply run:
 
 ~~~bash
 # NPM
-npm run sync   # alias of `npm run extract --overwrite && npm run compile`
+npm run sync
 
 # Yarn
-yarn sync      # alias of `yarn extract --overwrite && yarn compile`
+yarn sync
 ~~~
 
 ### Sync and Purge
@@ -384,10 +384,10 @@ the current branch as reference, use the `--clean` option.
 
 ~~~bash
 # NPM
-npm run sync_and_purge   # alias of `npm run extract --overwrite --clean && npm run compile`
+npm run sync_and_purge
 
 # Yarn
-yarn sync_and_purge      # alias of `yarn extract --overwrite --clean && yarn compile`
+yarn sync_and_purge
 ~~~
 
 As the name says, this operation will also perform a sync at the same time.
