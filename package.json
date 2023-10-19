@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@lingui/cli": ">=4.0",
-    "@lingui/macro": ">=4.0",
-    "@lingui/react": ">=4.0",
+    "@lingui/cli": "^4",
+    "@lingui/macro": "^4",
+    "@lingui/react": "^4",
     "@babel/core": ">=7.0",
     "babel-plugin-macros": ">=3.0"
   }
