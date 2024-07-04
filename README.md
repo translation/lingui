@@ -19,13 +19,17 @@ Write only the source text, and keep it synchronized with your translators on
 **Important Information:**
 
  * The [Translation.io](https://translation.io/lingui) client is directly integrated into
-the great [Lingui](https://github.com/lingui/js-lingui) internationalization
+the excellent [Lingui](https://github.com/lingui/js-lingui) internationalization
 framework.
 
- * This repository only provides additional documentation and a useful
-meta-package to simplify the [Lingui](https://github.com/lingui/js-lingui)
-installation. You can also refer to the [Lingui documentation](https://lingui.dev/)
-for more advanced features.
+ * This repository only provides additional documentation and a useful meta-package
+to simplify the [Lingui](https://github.com/lingui/js-lingui) installation.
+You can refer directly to the [Lingui documentation](https://lingui.dev/)
+for more advanced Lingui features.
+
+* The [`context`](https://lingui.dev/tutorials/explicit-vs-generated-ids#context) attribute (introduced in Lingui v4)
+will only work with our intergration if you use version >= **4.11.2** of @lingui/cli.
+If you are still on earlier versions of @lingui/cli, the `id` attribute can be used to pass context to your translators.
 
 ----------
 
@@ -93,17 +97,32 @@ import { Trans } from "@lingui/macro"
   <a href="https://google.com" target="_blank">link</a>
 </Trans>
 
-{/* Context: helps translators differentiate translations for the same source text (IDs should be unique) */}
+{/* Context: to help translators and allow different translations for the same source text */}
+{/* ⚠️ Only works with versions >= 4.11.2 of @lingui/cli */}
 <div>
-  <Trans id="meeting someone">
+  <Trans context="romantic meeting with someone">
     Date
   </Trans>
 
-  <Trans id="moment in time">
+  <Trans context="a moment in time">
     Date
   </Trans>
 </div>
+
+{/* Explicit IDs: to have more control over the structure of your localization keys */}
+{/* ⚠️ In versions < 4.11.2 of @lingui/cli, IDs were used as a way to pass context */}
+<div>
+  <Trans id="index.header.title">
+    Dashboard
+  </Trans>
+
+  <Trans id="modal.buttons.cancel">
+    Cancel
+  </Trans>
+</div>
 ~~~
+
+N.B. Attributes (`comment`, `context`, `id`) can be used together.
 
 #### Plural
 
@@ -147,7 +166,7 @@ import { Plural } from "@lingui/macro"
 have more of them, from this list: `zero`, `one`, `two`, `few`, `many`,
 `other`.
 
-Translators will have the correct list of plural forms proposed directly
+On Translation.io, your translators will see the correct list of plural forms directly
 in the interface, with examples in their target language:
 
 <a href="https://translation.io/lingui">
@@ -178,15 +197,28 @@ t({
   message: "View KPIs"
 })
 
-// Context: helps translators differentiate translations for the same source text (IDs should be unique)
+{/* Context: to help translators and allow different translations for the same source text */}
+{/* ⚠️ Only works with versions >= 4.11.2 of @lingui/cli */}
 t({
-  id: "meeting someone",
+  context: "romantic meeting with someone",
   message: "Date"
 })
 
 t({
-  id: "moment in time",
+  context: "a moment in time",
   message: "Date"
+})
+
+{/* Explicit IDs: to have more control over the structure of your localization keys */}
+{/* ⚠️ In versions < 4.11.2 of @lingui/cli, IDs were used as a way to pass context */}
+t({
+  id: "index.header.title",
+  message: "Dashboard"
+})
+
+t({
+  id: "modal.buttons.cancel",
+  message: "Cancel"
 })
 ~~~
 
