@@ -18,17 +18,17 @@ Write only the source text, and keep it synchronized with your translators on
 
 **Important Information:**
 
- * The [Translation.io](https://translation.io/lingui) client is directly integrated into
-the [Lingui](https://github.com/lingui/js-lingui) i18n framework (in [`@lingui/cli`](https://www.npmjs.com/package/@lingui/cli)).
+The [Translation.io](https://translation.io/lingui) client is directly integrated into
+the [Lingui](https://github.com/lingui/js-lingui) i18n framework (in the [`@lingui/cli`](https://www.npmjs.com/package/@lingui/cli) package).
 
- * This repository only provides additional documentation and a useful meta-package
+This repository only provides additional documentation and a useful meta-package
 to simplify the installation of [Lingui](https://github.com/lingui/js-lingui).
    + To use Lingui **v5**, you need to install  `@translation/lingui` **v 3.0.0** (latest)
-   + To use Lingui v4, you need to install [`@translation/lingui` **v 2.0.0**](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
+   + To use Lingui **v4**, you need to install [`@translation/lingui` **v 2.0.0**](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
 
-* For more advanced/specific Lingui features, you can still refer directly to the [Lingui documentation](https://lingui.dev/).
+For more advanced/specific Lingui features, you can still refer directly to the [Lingui documentation](https://lingui.dev/).
 
-* The [`context`](https://lingui.dev/tutorials/explicit-vs-generated-ids#context) attribute (introduced in Lingui v4)
+The [`context`](https://lingui.dev/tutorials/explicit-vs-generated-ids#context) attribute (introduced in Lingui v4)
 will only work with our intergration if you use version >= **4.11.2** of @lingui/cli.
 If you are still on earlier versions of @lingui/cli, the `id` attribute can be used to pass context to your translators.
 
