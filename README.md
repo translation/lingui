@@ -67,7 +67,7 @@ Need help? [contact@translation.io](mailto:contact@translation.io)
 #### Singular
 
 ~~~javascript
-import { Trans } from "@lingui/macro"
+import { Trans } from "@lingui/react/macro"
 ~~~
 
 ~~~jsx
@@ -127,7 +127,7 @@ N.B. Attributes (`comment`, `context`, `id`) can be used together.
 #### Plural
 
 ~~~javascript
-import { Plural } from "@lingui/macro"
+import { Plural } from "@lingui/react/macro"
 ~~~
 
 ~~~jsx
@@ -181,7 +181,7 @@ You can find the complete list of plural forms and plural rules here:
 #### Singular
 
 ~~~javascript
-import { t } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
 ~~~
 
 ~~~javascript
@@ -225,7 +225,7 @@ t({
 #### Plural
 
 ~~~javascript
-import { plural } from "@lingui/macro"
+import { plural } from "@lingui/core/macro"
 ~~~
 
 ~~~javascript
@@ -286,15 +286,15 @@ More complex but cleaner install, with some packages in development only.
 
 ~~~bash
 # NPM
-npm install --save-dev @lingui/cli @lingui/macro
-npm install --save-dev @babel/core babel-plugin-macros
+npm install --save-dev @lingui/cli
+npm install --save-dev @lingui/babel-plugin-lingui-macro
 npm install @lingui/react
 ~~~
 
 ~~~bash
 # Yarn
-yarn add --dev @lingui/cli @lingui/macro
-yarn add --dev @babel/core babel-plugin-macros
+yarn add --dev @lingui/cli
+yarn add --dev @lingui/babel-plugin-lingui-macro
 yarn add @lingui/react
 ~~~
 
@@ -346,11 +346,9 @@ For React (cf. [React Documentation](https://lingui.dev/tutorials/react) or [Rea
 ~~~jsx
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
-import { en } from 'make-plural/plurals'         // Plural rules for English
 import { messages } from './locales/en/messages' // English catalog of translations
 import Inbox from './Inbox'
 
-i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 
@@ -365,10 +363,8 @@ For JavaScript (cf. [documentation](https://lingui.dev/tutorials/javascript)):
 
 ~~~javascript
 import { i18n } from '@lingui/core'
-import { en } from 'make-plural/plurals'         // Plural rules for English
 import { messages } from './locales/en/messages' // English catalog of translations
 
-i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 ~~~
@@ -486,12 +482,9 @@ You can change the current locale by using:
 
 ~~~javascript
 import { i18n } from '@lingui/core'
-import { en } from 'make-plural/plurals'
 import { messages } from './locales/en/messages.js'
 
 // [...]
-
-i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 ~~~
@@ -532,18 +525,12 @@ that will assist you with this task.
 // i18n.ts
 
 import { i18n } from '@lingui/core';
-import { en, cs } from 'make-plural/plurals'
 
 export const locales = {
   en: "English",
   cs: "Česky",
 };
 export const defaultLocale = "en";
-
-i18n.loadLocaleData({
-  en: { plurals: en },
-  cs: { plurals: cs },
-})
 
 /**
 * We do a dynamic import of just the catalog that we need
