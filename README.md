@@ -97,7 +97,6 @@ import { Trans } from "@lingui/react/macro"
 </Trans>
 
 {/* Context: to help translators and allow different translations for the same source text */}
-{/* ⚠️ Only works with versions >= 4.11.2 of @lingui/cli */}
 <div>
   <Trans context="romantic meeting with someone">
     Date
@@ -109,7 +108,6 @@ import { Trans } from "@lingui/react/macro"
 </div>
 
 {/* Explicit IDs: to have more control over the structure of your localization keys */}
-{/* ⚠️ In versions < 4.11.2 of @lingui/cli, IDs were used as a way to pass context */}
 <div>
   <Trans id="index.header.title">
     Dashboard
@@ -197,7 +195,6 @@ t({
 })
 
 {/* Context: to help translators and allow different translations for the same source text */}
-{/* ⚠️ Only works with versions >= 4.11.2 of @lingui/cli */}
 t({
   context: "romantic meeting with someone",
   message: "Date"
@@ -209,7 +206,6 @@ t({
 })
 
 {/* Explicit IDs: to have more control over the structure of your localization keys */}
-{/* ⚠️ In versions < 4.11.2 of @lingui/cli, IDs were used as a way to pass context */}
 t({
   id: "index.header.title",
   message: "Dashboard"
