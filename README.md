@@ -18,18 +18,17 @@ Write only the source text, and keep it synchronized with your translators on
 
 **Important Information:**
 
- * The [Translation.io](https://translation.io/lingui) client is directly integrated into
-the excellent [Lingui](https://github.com/lingui/js-lingui) internationalization
-framework.
+* The [Translation.io](https://translation.io/lingui) client is directly integrated into
+the [Lingui](https://github.com/lingui/js-lingui) i18n framework.
 
- * This repository only provides additional documentation and a useful meta-package
-to simplify the [Lingui](https://github.com/lingui/js-lingui) installation.
-You can refer directly to the [Lingui documentation](https://lingui.dev/)
-for more advanced Lingui features.
+* This repository provides additional documentation and a useful meta-package
+to simplify the installation of [Lingui](https://github.com/lingui/js-lingui).
+You can refer directly to the [Lingui documentation](https://lingui.dev/) for more advanced Lingui features.
 
-* The [`context`](https://lingui.dev/tutorials/explicit-vs-generated-ids#context) attribute (introduced in Lingui v4)
-will only work with our intergration if you use version >= **4.11.2** of @lingui/cli.
-If you are still on earlier versions of @lingui/cli, the `id` attribute can be used to pass context to your translators.
+----------
+
+ * To use Lingui **v5**, you need to install  `@translation/lingui` **v 3.0.0** (latest)
+ * To use Lingui **v4**, you need to install [`@translation/lingui` **v 2.0.0**](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
 
 ----------
 
@@ -67,7 +66,7 @@ Need help? [contact@translation.io](mailto:contact@translation.io)
 #### Singular
 
 ~~~javascript
-import { Trans } from "@lingui/macro"
+import { Trans } from "@lingui/react/macro"
 ~~~
 
 ~~~jsx
@@ -98,7 +97,6 @@ import { Trans } from "@lingui/macro"
 </Trans>
 
 {/* Context: to help translators and allow different translations for the same source text */}
-{/* ⚠️ Only works with versions >= 4.11.2 of @lingui/cli */}
 <div>
   <Trans context="romantic meeting with someone">
     Date
@@ -110,7 +108,6 @@ import { Trans } from "@lingui/macro"
 </div>
 
 {/* Explicit IDs: to have more control over the structure of your localization keys */}
-{/* ⚠️ In versions < 4.11.2 of @lingui/cli, IDs were used as a way to pass context */}
 <div>
   <Trans id="index.header.title">
     Dashboard
@@ -127,7 +124,7 @@ N.B. Attributes (`comment`, `context`, `id`) can be used together.
 #### Plural
 
 ~~~javascript
-import { Plural } from "@lingui/macro"
+import { Plural } from "@lingui/react/macro"
 ~~~
 
 ~~~jsx
@@ -181,7 +178,7 @@ You can find the complete list of plural forms and plural rules here:
 #### Singular
 
 ~~~javascript
-import { t } from "@lingui/macro"
+import { t } from "@lingui/core/macro"
 ~~~
 
 ~~~javascript
@@ -198,7 +195,6 @@ t({
 })
 
 {/* Context: to help translators and allow different translations for the same source text */}
-{/* ⚠️ Only works with versions >= 4.11.2 of @lingui/cli */}
 t({
   context: "romantic meeting with someone",
   message: "Date"
@@ -210,7 +206,6 @@ t({
 })
 
 {/* Explicit IDs: to have more control over the structure of your localization keys */}
-{/* ⚠️ In versions < 4.11.2 of @lingui/cli, IDs were used as a way to pass context */}
 t({
   id: "index.header.title",
   message: "Dashboard"
@@ -225,7 +220,7 @@ t({
 #### Plural
 
 ~~~javascript
-import { plural } from "@lingui/macro"
+import { plural } from "@lingui/core/macro"
 ~~~
 
 ~~~javascript
@@ -286,15 +281,15 @@ More complex but cleaner install, with some packages in development only.
 
 ~~~bash
 # NPM
-npm install --save-dev @lingui/cli @lingui/macro
-npm install --save-dev @babel/core babel-plugin-macros
+npm install --save-dev @lingui/cli
+npm install --save-dev @lingui/babel-plugin-lingui-macro
 npm install @lingui/react
 ~~~
 
 ~~~bash
 # Yarn
-yarn add --dev @lingui/cli @lingui/macro
-yarn add --dev @babel/core babel-plugin-macros
+yarn add --dev @lingui/cli
+yarn add --dev @lingui/babel-plugin-lingui-macro
 yarn add @lingui/react
 ~~~
 
@@ -346,11 +341,9 @@ For React (cf. [React Documentation](https://lingui.dev/tutorials/react) or [Rea
 ~~~jsx
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
-import { en } from 'make-plural/plurals'         // Plural rules for English
 import { messages } from './locales/en/messages' // English catalog of translations
 import Inbox from './Inbox'
 
-i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 
@@ -365,10 +358,8 @@ For JavaScript (cf. [documentation](https://lingui.dev/tutorials/javascript)):
 
 ~~~javascript
 import { i18n } from '@lingui/core'
-import { en } from 'make-plural/plurals'         // Plural rules for English
 import { messages } from './locales/en/messages' // English catalog of translations
 
-i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 ~~~
@@ -486,12 +477,9 @@ You can change the current locale by using:
 
 ~~~javascript
 import { i18n } from '@lingui/core'
-import { en } from 'make-plural/plurals'
 import { messages } from './locales/en/messages.js'
 
 // [...]
-
-i18n.loadLocaleData('en', { plurals: en })
 i18n.load('en', messages)
 i18n.activate('en')
 ~~~
@@ -532,18 +520,12 @@ that will assist you with this task.
 // i18n.ts
 
 import { i18n } from '@lingui/core';
-import { en, cs } from 'make-plural/plurals'
 
 export const locales = {
   en: "English",
   cs: "Česky",
 };
 export const defaultLocale = "en";
-
-i18n.loadLocaleData({
-  en: { plurals: en },
-  cs: { plurals: cs },
-})
 
 /**
 * We do a dynamic import of just the catalog that we need
