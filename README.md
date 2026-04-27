@@ -27,7 +27,8 @@ You can refer directly to the [Lingui documentation](https://lingui.dev/) for mo
 
 ----------
 
- * To use Lingui **v5**, you need to install  `@translation/lingui` **v 3.0.0** (latest)
+ * To use Lingui **v6**, you need to install  `@translation/lingui` **v 4.0.0** (latest)
+ * To use Lingui **v5**, you need to install  `@translation/lingui` **v 3.0.0** (https://www.npmjs.com/package/@translation/lingui/v/3.0.0)
  * To use Lingui **v4**, you need to install [`@translation/lingui` **v 2.0.0**](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
 
 ----------
