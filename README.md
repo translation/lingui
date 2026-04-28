@@ -27,8 +27,10 @@ You can refer directly to the [Lingui documentation](https://lingui.dev/) for mo
 
 ----------
 
+**Versions:**
+
  * To use Lingui **v6**, you need to install  `@translation/lingui` **v 4.0.0** (latest)
- * To use Lingui **v5**, you need to install  `@translation/lingui` **v 3.0.0** (https://www.npmjs.com/package/@translation/lingui/v/3.0.0)
+ * To use Lingui **v5**, you need to install [`@translation/lingui` **v 3.0.0**](https://www.npmjs.com/package/@translation/lingui/v/3.0.0)
  * To use Lingui **v4**, you need to install [`@translation/lingui` **v 2.0.0**](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
 
 ----------
@@ -327,13 +329,16 @@ The configuration file looks like this:
     "path": "src/locales/{locale}/messages",
     "include": ["src"]
   }],
-  "format": "po",
   "service": {
     "name": "TranslationIO",
     "apiKey": "abcdefghijklmnopqrstuvwxyz012345"
   }
 }
 ~~~
+
+**Notes:**
+- With older Lingui versions (< 6.0), you must add the parameter `"format": "po"`
+- For a fine-tuned config, use a `lingui.config.js` file instead of `.linguirc` (see [Lingui Configuration](https://lingui.dev/ref/conf))
 
 ### 5. Setup your application
 
