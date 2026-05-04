@@ -1,6 +1,6 @@
 # Changelog
 
-## [v4.0.0](https://github.com/translation/lingui/releases/tag/v4.0.0) (2026-xx-xx)
+## [v4.0.0](https://github.com/translation/lingui/releases/tag/v4.0.0) (2026-05-04)
 
 #### New features:
 

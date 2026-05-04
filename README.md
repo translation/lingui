@@ -25,9 +25,9 @@ the [Lingui](https://github.com/lingui/js-lingui) i18n framework.
 to simplify the installation of [Lingui](https://github.com/lingui/js-lingui).
 You can refer directly to the [Lingui documentation](https://lingui.dev/) for more advanced Lingui features.
 
-**Versions of this meta-package:**
+----------
 
- * For Lingui **v6**, install  `@translation/lingui` (v4.0.0 - latest)
+ * For Lingui **v6**, install  `@translation/lingui`
  * For Lingui **v5**, install [`@translation/lingui@3.0.0`](https://www.npmjs.com/package/@translation/lingui/v/3.0.0)
  * For Lingui **v4**, install [`@translation/lingui@2.0.0`](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
 
