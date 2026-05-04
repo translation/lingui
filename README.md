@@ -335,6 +335,7 @@ The configuration file looks like this:
 ~~~
 
 **Notes:**
+
 - With older Lingui versions (< 6.0), you must add the parameter `"format": "po"`
 - For a fine-tuned config, use a `lingui.config.js` file instead of `.linguirc` (see [Lingui Configuration](https://lingui.dev/ref/conf))
 
