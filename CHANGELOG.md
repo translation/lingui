@@ -1,5 +1,18 @@
 # Changelog
 
+## [v4.0.0](https://github.com/translation/lingui/releases/tag/v4.0.0) (2026-05-04)
+
+#### New features:
+
+ * Compability with [Lingui V6](https://lingui.dev/blog/2026/04/22/announcing-lingui-6.0).
+ * **Migration:** refer to the [migration guide from Lingui 5.x to 6.x](https://lingui.dev/releases/migration-6).
+
+#### Breaking change:
+
+ * **Config file**: the `format` parameter no longer accepts a string value, so you should:
+   - remove this parameter (default format is **PO**)
+   - or use a [formatter function](https://lingui.dev/ref/conf#format) in your `lingui.config.{js|ts}` file (not possible in a `.linguirc` file)
+
 ## [v3.0.0](https://github.com/translation/lingui/releases/tag/v3.0.0) (2025-01-27)
 
 #### New features:

@@ -21,14 +21,15 @@ Write only the source text, and keep it synchronized with your translators on
 * The [Translation.io](https://translation.io/lingui) client is directly integrated into
 the [Lingui](https://github.com/lingui/js-lingui) i18n framework.
 
-* This repository provides additional documentation and a useful meta-package
+* This repository provides additional documentation and a useful **meta-package**
 to simplify the installation of [Lingui](https://github.com/lingui/js-lingui).
 You can refer directly to the [Lingui documentation](https://lingui.dev/) for more advanced Lingui features.
 
 ----------
 
- * To use Lingui **v5**, you need to install  `@translation/lingui` **v 3.0.0** (latest)
- * To use Lingui **v4**, you need to install [`@translation/lingui` **v 2.0.0**](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
+ * For Lingui **v6**, install  `@translation/lingui`
+ * For Lingui **v5**, install [`@translation/lingui@3.0.0`](https://www.npmjs.com/package/@translation/lingui/v/3.0.0)
+ * For Lingui **v4**, install [`@translation/lingui@2.0.0`](https://www.npmjs.com/package/@translation/lingui/v/2.0.0)
 
 ----------
 
@@ -326,13 +327,16 @@ The configuration file looks like this:
     "path": "src/locales/{locale}/messages",
     "include": ["src"]
   }],
-  "format": "po",
   "service": {
     "name": "TranslationIO",
     "apiKey": "abcdefghijklmnopqrstuvwxyz012345"
   }
 }
 ~~~
+
+**Notes:**
+- With older Lingui versions (< 6.0), you must add the parameter `"format": "po"`
+- For a fine-tuned config, use a `lingui.config.js` file instead of `.linguirc` (see [Lingui Configuration](https://lingui.dev/ref/conf))
 
 ### 5. Setup your application
 
